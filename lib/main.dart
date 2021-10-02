@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/src/controllers/education/education_page.dart';
+import 'package:portfolio_app/src/controllers/profile/profile_page.dart';
+import 'package:portfolio_app/src/controllers/skill/skill_page.dart';
+import 'package:portfolio_app/src/controllers/work/work_experience_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -37,7 +41,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(title: Text("Portfolio"),),
       body: Column(children: [
-        Spacer(),
+        //Spacer(),
+        _index == 0 ? WorkExperiencePage() : (_index == 1 ? EducationPage() : _index == 2 ? SkillPage() : ProfilePage()),
 
         Padding(
           padding: EdgeInsets.only(top: 10.0, left: 18.0, right: 18.0, bottom: MediaQuery.of(context).padding.bottom),
